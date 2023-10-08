@@ -7,6 +7,13 @@
 
 import React from 'react';
 import type {PropsWithChildren} from 'react';
+import {useState, useEffect} from 'react';
+
+import { ReactNativeFirebase } from '@react-native-firebase/app';
+import { firestore } from '@react-native-firebase/firestore';
+import auth from '@react-native-firebase/auth';
+import {GoogleSignin} from '@react-native-google-signin/google-signin';
+
 import {
   SafeAreaView,
   ScrollView,
@@ -15,6 +22,7 @@ import {
   Text,
   useColorScheme,
   View,
+  Button,
 } from 'react-native';
 
 import {
@@ -25,76 +33,88 @@ import {
   ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
+//Adding client id from google-services.json for Google sign in.
+GoogleSignin.configure({
+  webClientId:
+    '636449863243-b9a75pt4j3cmlhj4vrkujqr4v7pfh5mk.apps.googleusercontent.com',
+});
+
 type SectionProps = PropsWithChildren<{
   title: string;
 }>;
 
-function Section({children, title}: SectionProps): JSX.Element {
+function Section({children, title}: SectionProps): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
   return (
     <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
+      <Text style={[styles.sectionTitle, Colors.white]}>{title}</Text>
+      <Text style={[styles.sectionDescription, Colors.light]}>{children}</Text>
     </View>
   );
 }
 
 function App(): JSX.Element {
-  const isDarkMode = useColorScheme() === 'dark';
+
+  // Set an initializing state whilst Firebase connects.
+  const [initializing, setInitializing] = useState(true);
+  const [user, setUser] = useState();
+
+  // Handler for whenever user state changes.
+  function onAuthStateChanged(account) {
+    setUser(account);
+    if (initializing) {
+      setInitializing(false);
+    }
+  }
+
+  //Effect hook that subscribes to user authentication state.
+  useEffect(() => {
+    const subscriber = auth().onAuthStateChanged(onAuthStateChanged);
+    return subscriber; // unsubscribe on unmount
+  }, []);
 
   const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
+    backgroundColor: Colors.lighter,
   };
 
+  //View if Firebase is connecting.
+  if (initializing) {
+    return (
+      <View>
+        <Text>Initializing...</Text>
+      </View>
+    );
+  }
+
+  //View if user has not logged in.
+  if (!user) {
+    return (
+      <View>
+        <Text>You are not logged in</Text>
+      </View>
+    );
+  }
+
+  //View if user is logged in.
   return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar
-        barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-        backgroundColor={backgroundStyle.backgroundColor}
-      />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Step One">
-            Edit <Text style={styles.highlight}>App.tsx</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-          <Section title="See Your Changes">
-            <ReloadInstructions />
-          </Section>
-          <Section title="Debug">
-            <DebugInstructions />
-          </Section>
-          <Section title="Learn More">
-            Read the docs to discover what to do next:
-          </Section>
-          <LearnMoreLinks />
-        </View>
-      </ScrollView>
-    </SafeAreaView>
+    <View>
+      <Text>Welcome {user.email}</Text>
+    </View>
   );
 }
+
+/*
+async function onGoogleButtonPress() {
+  // Check if device has Google Play.
+  await GoogleSignin.hasPlayServices({showPlayServicesUpdateDialog: true});
+  // Get the login ID token.
+  const {idToken} = await GoogleSignin.signIn();
+  // Create a Google credential with the token.
+  const googleCredential = auth.GoogleAuthProvider.credential(idToken);
+  // Sign-in the user with the credential.
+  return auth().signInWithCredential(googleCredential);
+}
+*/
 
 const styles = StyleSheet.create({
   sectionContainer: {

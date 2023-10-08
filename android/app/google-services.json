@@ -14,7 +14,15 @@
       },
       "oauth_client": [
         {
-          "client_id": "636449863243-b9a75pt4j3cmlhj4vrkujqr4v7pfh5mk.apps.googleusercontent.com",
+          "client_id": "636449863243-qf25uf01lru6o2au52c8vs47qd0gkc00.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.safespace",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "636449863243-5nn58g22tg3ap3jgms652t2h75dvpana.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
@@ -27,7 +35,7 @@
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "636449863243-b9a75pt4j3cmlhj4vrkujqr4v7pfh5mk.apps.googleusercontent.com",
+              "client_id": "636449863243-5nn58g22tg3ap3jgms652t2h75dvpana.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
