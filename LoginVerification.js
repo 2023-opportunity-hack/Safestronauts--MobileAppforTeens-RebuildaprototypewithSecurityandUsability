@@ -3,12 +3,15 @@ import {useState, useEffect} from 'react';
 
 import auth from '@react-native-firebase/auth';
 
-import {StyleSheet, View, Button, Text} from 'react-native';
+import {StyleSheet, View, Button, Text, TextInput} from 'react-native';
+import {SafeAreaView} from 'react-native-safe-area-context';
 
 export default function LoginVerification({navigation}) {
   // Set an initializing state whilst Firebase connects.
   const [initializing, setInitializing] = useState(true);
   const [user, setUser] = useState();
+  const [username, setUsername] = useState();
+  const [password, setPassword] = useState();
 
   // Handler for whenever user state changes.
   function onAuthStateChanged(account) {
@@ -36,19 +39,36 @@ export default function LoginVerification({navigation}) {
   //View if user has not logged in.
   if (!user) {
     return (
-      <View>
-        <Text>PLease login</Text>
-      </View>
+      <SafeAreaView style={styles.container}>
+        <View>
+          <Text style={styles.inputHeader}>Username</Text>
+        </View>
+        <TextInput
+          style={styles.input}
+          onChangeText={setUsername}
+          value={username}
+        />
+        <View>
+          <Text style={styles.inputHeader}>Password</Text>
+        </View>
+        <TextInput
+          style={styles.input}
+          onChangeText={setPassword}
+          value={password}
+        />
+        <View style={styles.buttonText}>
+          <Button
+            title="Login"
+            onPress={() => navigation.navigate('TicTacToe')}
+          />
+          <Button title="Sign Up" />
+        </View>
+      </SafeAreaView>
     );
   }
 
-  //
-  return (
-    <View>
-      <Text>Welcome {user.email}</Text>
-      <Button onClick={() => navigation.navigate('Main')}>tictactoe</Button>
-    </View>
-  );
+  //View if user has logged in.
+  return () => navigation.navigate('TicTacToe');
 }
 
 const styles = StyleSheet.create({
@@ -57,8 +77,8 @@ const styles = StyleSheet.create({
     flexWrap: 'wrap',
     justifyContent: 'space-around',
     padding: 40,
+    color: '#000',
   },
-
   buttonRectangle: {
     flexBasis: '35%',
     backgroundColor: '#ffffff',
@@ -71,9 +91,23 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
     backgroundColor: '#f1dcf7', // Set the background color here
     padding: 10,
+  },
+  input: {
+    height: 40,
+    margin: 12,
+    borderWidth: 1,
+    padding: 10,
+  },
+  inputHeader: {
+    margin: 12,
+    fontWeight: 'bold',
+    color: '#000',
+  },
+  buttonText: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    color: '#000', // Button text color.
   },
 });
