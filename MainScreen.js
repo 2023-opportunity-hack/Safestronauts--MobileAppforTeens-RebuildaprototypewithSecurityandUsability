@@ -196,7 +196,6 @@ export default function MainScreen({ navigation }) {
         </View>
       </View>
 
-      {/* Separate View for heartspeak.jpg */}
       <View>
         <Image
           source={require('./assets/map.png')}
