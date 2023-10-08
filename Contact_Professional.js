@@ -11,7 +11,6 @@ export default function Contact_Professional({ navigation }) {
     const [selectedYear, setSelectedYear] = useState(null);
     const toggleYearDropdown = () => {
       setIsYearDropdownVisible(!isYearDropdownVisible);
-      setIsDayPickerVisible(false);
     };
   
     const handleYearSelect = (year) => {
