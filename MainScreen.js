@@ -48,7 +48,7 @@ export default function MainScreen({ navigation }) {
     Alert.alert('Confirmation', 'Do you want to navigate to Page 4?', [
       {
         text: 'Yes',
-        onPress: () => navigation.navigate('Page4'),
+        onPress: () => navigation.navigate('Safety_plan'),
       },
       {
         text: 'No',
