@@ -201,7 +201,7 @@ const styles = StyleSheet.create({
     paddingVertical: 10,
     paddingHorizontal: 20,
     alignSelf: 'center',
-    marginTop: 20,
+    marginTop: 260,
   },
   goBackButtonText: {
     fontWeight: 'bold',

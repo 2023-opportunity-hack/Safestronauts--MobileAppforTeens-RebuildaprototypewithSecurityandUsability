@@ -13,7 +13,62 @@ import {
 export default function Safety_plan({navigation}) {
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      <View style={styles.imageContainer}>
+      <View>
+        <Image
+          source={require('./assets/heartspeak1.png')}
+          style={{
+            width: 50,
+            height: 50,
+            position: 'absolute',
+            right: 15,
+            bottom: -180,
+          }}
+          resizeMode="contain"
+        />
+        <Image
+          source={require('./assets/heartspeak1.png')}
+          style={{
+            width: 60,
+            height: 60,
+            position: 'absolute',
+            left: 40,
+            bottom: -40,
+          }}
+          resizeMode="contain"
+        />
+        <Image
+          source={require('./assets/heartspeak1.png')}
+          style={{
+            width: 30,
+            height: 30,
+            position: 'absolute',
+            left: 40,
+            bottom: -400,
+          }}
+          resizeMode="contain"
+        />
+        <Image
+          source={require('./assets/cute(2).png')}
+          style={{
+            width: 50,
+            height: 60,
+            position: 'absolute',
+            left: -200,
+            top: 150,
+          }}
+          resizeMode="contain"
+        />
+        <Image
+          source={require('./assets/cute(2).png')}
+          style={{
+            width: 100,
+            height: 100,
+            position: 'absolute',
+            right: -200,
+            top: 240,
+          }}
+          resizeMode="contain"
+        />
         <Image
           source={require('./assets/heartspeak1.png')}
           style={{

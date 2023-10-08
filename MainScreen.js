@@ -11,45 +11,57 @@ import {
 
 export default function MainScreen({navigation}) {
   const handleEmergencyClick1 = () => {
-    Alert.alert('Confirmation', 'Do you want to navigate to Page 1?', [
-      {
-        text: 'Yes',
-        onPress: () => navigation.navigate('Page1'),
-      },
-      {
-        text: 'No',
-        onPress: () => console.log('No pressed'),
-        style: 'cancel',
-      },
-    ]);
+    Alert.alert(
+      'Confirmation',
+      'Do you want to navigate to Emergency screenpage?',
+      [
+        {
+          text: 'Yes',
+          onPress: () => navigation.navigate('Emergency'),
+        },
+        {
+          text: 'No',
+          onPress: () => console.log('No pressed'),
+          style: 'cancel',
+        },
+      ],
+    );
   };
 
   const handleEmergencyClick2 = () => {
-    Alert.alert('Confirmation', 'Do you want to navigate to Page 2?', [
-      {
-        text: 'Yes',
-        onPress: () => navigation.navigate('Page2'),
-      },
-      {
-        text: 'No',
-        onPress: () => console.log('No pressed'),
-        style: 'cancel',
-      },
-    ]);
+    Alert.alert(
+      'Confirmation',
+      'Do you want to navigate to Contact_Professional screenpage?',
+      [
+        {
+          text: 'Yes',
+          onPress: () => navigation.navigate('Contact_Professional'),
+        },
+        {
+          text: 'No',
+          onPress: () => console.log('No pressed'),
+          style: 'cancel',
+        },
+      ],
+    );
   };
 
   const handleEmergencyClick3 = () => {
-    Alert.alert('Confirmation', 'Do you want to navigate to Page 3?', [
-      {
-        text: 'Yes',
-        onPress: () => navigation.navigate('Page3'),
-      },
-      {
-        text: 'No',
-        onPress: () => console.log('No pressed'),
-        style: 'cancel',
-      },
-    ]);
+    Alert.alert(
+      'Confirmation',
+      'Do you want to navigate to Document_Abuse screenpage?',
+      [
+        {
+          text: 'Yes',
+          onPress: () => navigation.navigate('Document_Abuse'),
+        },
+        {
+          text: 'No',
+          onPress: () => console.log('No pressed'),
+          style: 'cancel',
+        },
+      ],
+    );
   };
 
   const handleEmergencyClick4 = () => {
@@ -252,7 +264,6 @@ export default function MainScreen({navigation}) {
         </View>
       </View>
 
-      {/* Separate View for heartspeak.jpg */}
       <View>
         <Image
           source={require('./assets/map.png')}
