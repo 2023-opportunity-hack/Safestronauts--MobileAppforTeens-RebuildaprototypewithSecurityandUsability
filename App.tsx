@@ -9,8 +9,8 @@ import React from 'react';
 import type {PropsWithChildren} from 'react';
 import {useState, useEffect} from 'react';
 
-import { ReactNativeFirebase } from '@react-native-firebase/app';
-import { firestore } from '@react-native-firebase/firestore';
+import {ReactNativeFirebase} from '@react-native-firebase/app';
+import {firestore} from '@react-native-firebase/firestore';
 import auth from '@react-native-firebase/auth';
 import {GoogleSignin} from '@react-native-google-signin/google-signin';
 
@@ -54,7 +54,6 @@ function Section({children, title}: SectionProps): React.JSX.Element {
 }
 
 function App(): JSX.Element {
-
   // Set an initializing state whilst Firebase connects.
   const [initializing, setInitializing] = useState(true);
   const [user, setUser] = useState();
