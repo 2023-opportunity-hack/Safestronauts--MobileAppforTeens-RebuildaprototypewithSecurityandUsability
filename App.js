@@ -1,6 +1,7 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
+import LoginVerification from './LoginVerification';
 import MainScreen from './MainScreen';
 import Page1 from './Page1';
 import Page2 from './Page2';
@@ -14,7 +15,8 @@ const Stack = createStackNavigator();
 export default function App() {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Main">
+      <Stack.Navigator initialRouteName="LoginVer">
+        <Stack.Screen name="LoginVer" component={LoginVerification} />
         <Stack.Screen name="Main" component={MainScreen} />
         <Stack.Screen name="Page1" component={Page1} />
         <Stack.Screen name="Page2" component={Page2} />

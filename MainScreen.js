@@ -1,7 +1,15 @@
 import React from 'react';
-import { StyleSheet, View, Button, Alert, TouchableOpacity, Text, Image } from 'react-native';
+import {
+  StyleSheet,
+  View,
+  Button,
+  Alert,
+  TouchableOpacity,
+  Text,
+  Image,
+} from 'react-native';
 
-export default function MainScreen({ navigation }) {
+export default function MainScreen({navigation}) {
   const handleEmergencyClick1 = () => {
     Alert.alert('Confirmation', 'Do you want to navigate to Page 1?', [
       {
@@ -89,49 +97,87 @@ export default function MainScreen({ navigation }) {
   return (
     <View style={styles.container}>
       <View style={styles.gridContainer}>
-      <View style={styles.imageContainer}>
-  <Image
-    source={require('./assets/safespace1.png')}
-    style={{ width: 300, height: 270 }}
-    resizeMode="contain"
-  />
-  <Image
-    source={require('./assets/heartspeak1.png')}
-    style={{ width: 50, height: 50, position: 'absolute', right: -15, bottom:10, }}
-    resizeMode="contain"
-  />
-    <Image
-    source={require('./assets/heartspeak1.png')}
-    style={{ width: 60, height: 60, position: 'absolute', left: 40, bottom:-25, }}
-    resizeMode="contain"
-  />
-     <Image
-    source={require('./assets/heartspeak1.png')}
-    style={{ width: 30, height: 30, position: 'absolute', left: 40, bottom: -400, }}
-    resizeMode="contain"
-  />
-    <Image
-    source={require('./assets/cute(2).png')}
-    style={{ width: 50, height: 60, position: 'absolute', left: -30, top: 25, }}
-    resizeMode="contain"
-  />
-      <Image
-    source={require('./assets/cute(2).png')}
-    style={{ width: 100, height: 100, position: 'absolute', right: -30, top: 630, }}
-    resizeMode="contain"
-  />
-  <Image
-    source={require('./assets/heartspeak1.png')}
-    style={{ width: 40, height: 40, position: 'absolute', left: -30, bottom:-200, }}
-    resizeMode="contain"
-  />
-</View>
+        <View style={styles.imageContainer}>
+          <Image
+            source={require('./assets/safespace1.png')}
+            style={{width: 300, height: 270}}
+            resizeMode="contain"
+          />
+          <Image
+            source={require('./assets/heartspeak1.png')}
+            style={{
+              width: 50,
+              height: 50,
+              position: 'absolute',
+              right: -15,
+              bottom: 10,
+            }}
+            resizeMode="contain"
+          />
+          <Image
+            source={require('./assets/heartspeak1.png')}
+            style={{
+              width: 60,
+              height: 60,
+              position: 'absolute',
+              left: 40,
+              bottom: -25,
+            }}
+            resizeMode="contain"
+          />
+          <Image
+            source={require('./assets/heartspeak1.png')}
+            style={{
+              width: 30,
+              height: 30,
+              position: 'absolute',
+              left: 40,
+              bottom: -400,
+            }}
+            resizeMode="contain"
+          />
+          <Image
+            source={require('./assets/cute(2).png')}
+            style={{
+              width: 50,
+              height: 60,
+              position: 'absolute',
+              left: -30,
+              top: 25,
+            }}
+            resizeMode="contain"
+          />
+          <Image
+            source={require('./assets/cute(2).png')}
+            style={{
+              width: 100,
+              height: 100,
+              position: 'absolute',
+              right: -30,
+              top: 630,
+            }}
+            resizeMode="contain"
+          />
+          <Image
+            source={require('./assets/heartspeak1.png')}
+            style={{
+              width: 40,
+              height: 40,
+              position: 'absolute',
+              left: -30,
+              bottom: -200,
+            }}
+            resizeMode="contain"
+          />
+        </View>
         {/* Row 1 */}
         <View style={styles.buttonRectangle}>
-          <TouchableOpacity style={styles.buttonContainer} onPress={handleEmergencyClick1}>
+          <TouchableOpacity
+            style={styles.buttonContainer}
+            onPress={handleEmergencyClick1}>
             <Image
               source={require('./assets/SOS_pic.png')}
-              style={{ width: 60, height: 60 }}
+              style={{width: 60, height: 60}}
               resizeMode="contain"
             />
             <Text style={styles.buttonText}>Emergency</Text>
@@ -139,10 +185,12 @@ export default function MainScreen({ navigation }) {
         </View>
 
         <View style={styles.buttonRectangle}>
-          <TouchableOpacity style={styles.buttonContainer} onPress={handleEmergencyClick2}>
+          <TouchableOpacity
+            style={styles.buttonContainer}
+            onPress={handleEmergencyClick2}>
             <Image
               source={require('./assets/Contact_professional.png')}
-              style={{ width: 60, height: 60 }}
+              style={{width: 60, height: 60}}
               resizeMode="contain"
             />
             <Text style={styles.buttonText}>Contact Professional</Text>
@@ -151,10 +199,12 @@ export default function MainScreen({ navigation }) {
 
         {/* Row 2 */}
         <View style={styles.buttonRectangle}>
-          <TouchableOpacity style={styles.buttonContainer} onPress={handleEmergencyClick3}>
+          <TouchableOpacity
+            style={styles.buttonContainer}
+            onPress={handleEmergencyClick3}>
             <Image
               source={require('./assets/document_abuse.png')}
-              style={{ width: 60, height: 60 }}
+              style={{width: 60, height: 60}}
               resizeMode="contain"
             />
             <Text style={styles.buttonText}>Document Abuse</Text>
@@ -162,10 +212,12 @@ export default function MainScreen({ navigation }) {
         </View>
 
         <View style={styles.buttonRectangle}>
-          <TouchableOpacity style={styles.buttonContainer} onPress={handleEmergencyClick4}>
+          <TouchableOpacity
+            style={styles.buttonContainer}
+            onPress={handleEmergencyClick4}>
             <Image
               source={require('./assets/safety_plan.png')}
-              style={{ width: 60, height: 60 }}
+              style={{width: 60, height: 60}}
               resizeMode="contain"
             />
             <Text style={styles.buttonText}>Safety Plan</Text>
@@ -174,10 +226,12 @@ export default function MainScreen({ navigation }) {
 
         {/* Row 3 */}
         <View style={styles.buttonRectangle}>
-          <TouchableOpacity style={styles.buttonContainer} onPress={handleEmergencyClick5}>
+          <TouchableOpacity
+            style={styles.buttonContainer}
+            onPress={handleEmergencyClick5}>
             <Image
               source={require('./assets/heartbroken.png')}
-              style={{ width: 60, height: 60 }}
+              style={{width: 60, height: 60}}
               resizeMode="contain"
             />
             <Text style={styles.buttonText}>Self Care</Text>
@@ -185,13 +239,15 @@ export default function MainScreen({ navigation }) {
         </View>
 
         <View style={styles.buttonRectangle}>
-          <TouchableOpacity style={styles.buttonContainer} onPress={handleEmergencyClick6}>
+          <TouchableOpacity
+            style={styles.buttonContainer}
+            onPress={handleEmergencyClick6}>
             <Image
               source={require('./assets/warning_sign.png')}
-              style={{ width: 60, height: 60 }}
+              style={{width: 60, height: 60}}
               resizeMode="contain"
             />
-            <Text style={styles.buttonText}>Warning Sign</Text>
+            <Text style={styles.buttonText}>Warning Signs</Text>
           </TouchableOpacity>
         </View>
       </View>
@@ -199,7 +255,7 @@ export default function MainScreen({ navigation }) {
       <View>
         <Image
           source={require('./assets/map.png')}
-          style={{ width: 60, height: 60 }}
+          style={{width: 60, height: 60}}
           resizeMode="contain"
         />
       </View>
