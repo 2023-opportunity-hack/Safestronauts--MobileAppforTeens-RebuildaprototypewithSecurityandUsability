@@ -196,6 +196,7 @@ export default function MainScreen({ navigation }) {
         </View>
       </View>
 
+      {/* Separate View for heartspeak.jpg */}
       <View>
         <Image
           source={require('./assets/map.png')}
@@ -214,22 +215,25 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     padding: 40,
   },
-
+  buttonText: {
+    marginTop: 5,
+    fontWeight: 'bold', 
+  },
   buttonRectangle: {
     flexBasis: '35%',
     backgroundColor: '#ffffff',
     borderRadius: 8,
     padding: 10,
     marginBottom: 20,
-    borderWidth: 1, // Add border width
-    borderColor: '#dcdcdc', // Add border color
+    borderWidth: 1,
+    borderColor: '#dcdcdc',
     alignItems: 'center',
   },
   container: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#f1dcf7', // Set the background color here
+    backgroundColor: '#f1dcf7',
     padding: 10,
   },
 });
