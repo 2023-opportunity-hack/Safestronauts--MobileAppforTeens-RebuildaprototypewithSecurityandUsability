@@ -3,10 +3,10 @@ import { StyleSheet, View, Button, Alert, TouchableOpacity, Text, Image } from '
 
 export default function MainScreen({ navigation }) {
   const handleEmergencyClick1 = () => {
-    Alert.alert('Confirmation', 'Do you want to navigate to Page 1?', [
+    Alert.alert('Confirmation', 'Do you want to navigate to Emergency screenpage?', [
       {
         text: 'Yes',
-        onPress: () => navigation.navigate('Page1'),
+        onPress: () => navigation.navigate('Emergency'),
       },
       {
         text: 'No',
@@ -17,10 +17,10 @@ export default function MainScreen({ navigation }) {
   };
 
   const handleEmergencyClick2 = () => {
-    Alert.alert('Confirmation', 'Do you want to navigate to Page 2?', [
+    Alert.alert('Confirmation', 'Do you want to navigate to Contact_Professional screenpage?', [
       {
         text: 'Yes',
-        onPress: () => navigation.navigate('Page2'),
+        onPress: () => navigation.navigate('Contact_Professional'),
       },
       {
         text: 'No',
@@ -31,10 +31,10 @@ export default function MainScreen({ navigation }) {
   };
 
   const handleEmergencyClick3 = () => {
-    Alert.alert('Confirmation', 'Do you want to navigate to Page 3?', [
+    Alert.alert('Confirmation', 'Do you want to navigate to Document_Abuse screenpage?', [
       {
         text: 'Yes',
-        onPress: () => navigation.navigate('Page3'),
+        onPress: () => navigation.navigate('Document_Abuse'),
       },
       {
         text: 'No',
@@ -196,7 +196,6 @@ export default function MainScreen({ navigation }) {
         </View>
       </View>
 
-      {/* Separate View for heartspeak.jpg */}
       <View>
         <Image
           source={require('./assets/map.png')}

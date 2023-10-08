@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, Button, Image, StyleSheet, TouchableOpacity } from 'react-native';
 
-export default function Page3({ navigation }) {
+export default function Document_Abuse({ navigation }) {
   return (
     <View style>
       <View>
@@ -64,7 +64,7 @@ export default function Page3({ navigation }) {
       <View style={styles.goBackButtonContainer}>
         <TouchableOpacity
           style={styles.goreport}
-          onPress={() => navigation.navigate('Page7')}
+          onPress={() => navigation.navigate('Abuse_Report')}
           >
           <Text style={styles.goBackButtonText}>Add new record</Text>
         </TouchableOpacity>
