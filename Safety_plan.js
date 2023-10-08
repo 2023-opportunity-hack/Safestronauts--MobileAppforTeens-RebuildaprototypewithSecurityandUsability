@@ -4,7 +4,7 @@ import { StyleSheet, View, Button, Alert, TouchableOpacity, Text, Image, ScrollV
 export default function Safety_plan({ navigation }) {
   return (
     <ScrollView contentContainerStyle={styles.container}>
-       <View style={styles.imageContainer}>
+       <View>
        <Image
     source={require('./assets/heartspeak1.png')}
     style={{ width: 50, height: 50, position: 'absolute', right: 15, bottom:-180, }}
