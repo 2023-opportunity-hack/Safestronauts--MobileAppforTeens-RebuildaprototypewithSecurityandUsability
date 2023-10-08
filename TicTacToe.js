@@ -54,14 +54,14 @@ export default function TicTacToe({navigation}) {
           <TouchableOpacity
             style={styles.buttonContainer}
             onPress={() => handlePress(3)}>
-            <Text style={styles.buttonText}>a</Text>
+            <Text style={styles.buttonText} />
           </TouchableOpacity>
         </View>
         <View style={styles.buttonRectangle}>
           <TouchableOpacity
             style={styles.buttonContainer}
-            onPress={() => specialPress()}>
-            <Text style={styles.buttonText}>{middleSquare}</Text>
+            onPress={() => navigation.navigate('Main')}>
+            <Text style={styles.buttonText}>X</Text>
           </TouchableOpacity>
         </View>
         <View style={styles.buttonRectangle}>
@@ -105,12 +105,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   buttonText: {
-    fontSize: 36,
+    fontSize: 65,
     fontWeight: 'bold',
+    color: '#000',
   },
   buttonRectangle: {
-    height: 36,
-    width: 36,
+    height: 100,
+    width: 100,
     backgroundColor: '#ffffff',
     borderRadius: 8,
     borderWidth: 1,
