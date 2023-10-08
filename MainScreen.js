@@ -285,6 +285,7 @@ const styles = StyleSheet.create({
   buttonText: {
     marginTop: 5,
     fontWeight: 'bold',
+    color: '#000',
   },
   buttonRectangle: {
     flexBasis: '35%',

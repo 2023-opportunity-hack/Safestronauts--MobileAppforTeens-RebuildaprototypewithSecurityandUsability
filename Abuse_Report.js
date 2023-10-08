@@ -187,6 +187,7 @@ export default function Abuse_Report({navigation}) {
 const styles = StyleSheet.create({
   text3: {
     fontWeight: 'bold',
+    color: '#000',
   },
   text2: {
     fontWeight: 'bold',
@@ -284,14 +285,17 @@ const styles = StyleSheet.create({
   dayText: {
     fontSize: 16,
     fontWeight: 'bold',
+    color: '#000',
   },
   monthText: {
     fontSize: 16,
     fontWeight: 'bold',
+    color: '#000',
   },
   yearText: {
     fontSize: 16,
     fontWeight: 'bold',
+    color: '#000',
   },
   dropdown: {
     position: 'absolute',
@@ -301,5 +305,6 @@ const styles = StyleSheet.create({
     borderColor: '#ccc',
     borderRadius: 5,
     padding: 10,
+    color: '#000',
   },
 });
